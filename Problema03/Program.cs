@@ -11,6 +11,7 @@ namespace Problema03
             MostrarAuto(Auto1);            
 
             Auto Auto2 = CrearAutoPeugeot();
+
             MostrarAuto(Auto2);
         }
 
@@ -46,9 +47,16 @@ namespace Problema03
             return auto;
         }
 
-        static void MostrarAuto(Auto auto)
+        static void MostrarAuto(Auto auto )
         {
-            Console.WriteLine("{0} - {1}", auto.Modelo, auto.Anio);
+            try
+            {
+                Console.WriteLine("{0} - {1}", auto.Modelo, auto.Anio);
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Fin del listado");
+            }
             Console.ReadLine();
         }
     }

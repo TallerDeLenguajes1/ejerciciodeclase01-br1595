@@ -15,7 +15,14 @@ namespace ManejoDeErrores
 
             for (int i = 0; i <= 5; i++)
             {
-                Console.WriteLine(list[i].ToString());
+                try
+                {
+                    Console.WriteLine(list[i].ToString());
+                }
+                catch(IndexOutOfRangeException)
+                {
+                    Console.WriteLine("End of array");
+                }
             }
             Console.ReadLine();
         }
